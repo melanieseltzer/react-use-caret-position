@@ -1,13 +1,13 @@
 {
-  "name": "react-library-boilerplate",
+  "name": "react-use-cursor-position",
   "version": "0.0.0",
-  "description": "Opinionated boilerplate for React libraries based on create-react-library.",
+  "description": "A React hook to keep track of the cursor position in an input.",
   "author": "Melanie Seltzer <melleh11@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/melanieseltzer/react-library-boilerplate#readme",
+  "homepage": "https://github.com/melanieseltzer/react-use-cursor-position#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/melanieseltzer/react-library-boilerplate.git"
+    "url": "https://github.com/melanieseltzer/react-use-cursor-position.git"
   },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -27,8 +27,8 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^15.0.0 || ^16.0.0",
-    "react-dom": "^15.0.0 || ^16.0.0"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
