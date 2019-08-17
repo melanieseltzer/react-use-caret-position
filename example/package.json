@@ -1,0 +1,26 @@
+{
+  "name": "react-library-boilerplate-example",
+  "version": "0.0.0",
+  "description": "Blah blah blah",
+  "homepage": "https://melanieseltzer.github.io/react-library-boilerplate-example",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-library-boilerplate": "link:..",
+    "react-dom": "^16.4.1",
+    "react-scripts": "^2.1.8"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
