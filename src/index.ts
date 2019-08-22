@@ -1,8 +1,10 @@
 import { useState, RefObject } from 'react';
 
-function useCaretPosition(node: RefObject<HTMLFormElement>) {
-  const [start, setStart] = useState(null);
-  const [end, setEnd] = useState(null);
+function useCaretPosition(
+  node: RefObject<HTMLInputElement | HTMLTextAreaElement>
+) {
+  const [start, setStart] = useState<number | null>(0);
+  const [end, setEnd] = useState<number | null>(0);
 
   const updateCaret = () => {
     // Get the updated caret postions from the ref passed in
