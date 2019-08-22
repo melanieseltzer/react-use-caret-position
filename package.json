@@ -1,13 +1,13 @@
 {
-  "name": "react-use-cursor-position",
+  "name": "react-use-caret-position",
   "version": "0.0.0",
-  "description": "A React hook to keep track of the cursor position in an input.",
+  "description": "A React hook to keep track of the caret position in an input",
   "author": "Melanie Seltzer <melleh11@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/melanieseltzer/react-use-cursor-position#readme",
+  "homepage": "https://github.com/melanieseltzer/react-use-caret-position#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/melanieseltzer/react-use-cursor-position.git"
+    "url": "https://github.com/melanieseltzer/react-use-caret-position.git"
   },
   "main": "dist/index.js",
   "module": "dist/index.es.js",

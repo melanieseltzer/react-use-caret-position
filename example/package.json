@@ -1,13 +1,13 @@
 {
-  "name": "react-library-boilerplate-example",
+  "name": "react-use-caret-position-example",
   "version": "0.0.0",
-  "description": "Blah blah blah",
-  "homepage": "https://melanieseltzer.github.io/react-library-boilerplate-example",
+  "description": "Example of react-use-caret-position",
+  "homepage": "https://melanieseltzer.github.io/react-use-caret-position",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "react": "^16.9.0",
-    "react-library-boilerplate": "link:..",
+    "react-use-caret-position": "link:..",
     "react-dom": "^16.9.0",
     "react-scripts": "^2.1.8"
   },
