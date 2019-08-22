@@ -1,6 +1,6 @@
 {
-  "short_name": "react-library-boilerplate",
-  "name": "react-library-boilerplate",
+  "short_name": "react-use-caret-position",
+  "name": "react-use-caret-position",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
