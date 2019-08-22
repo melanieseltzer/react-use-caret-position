@@ -6,9 +6,9 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "react": "^16.9.0",
+    "react": "link:../node_modules/react",
     "react-use-caret-position": "link:..",
-    "react-dom": "^16.9.0",
+    "react-dom": "link:../node_modules/react-dom",
     "react-scripts": "^2.1.8"
   },
   "scripts": {
