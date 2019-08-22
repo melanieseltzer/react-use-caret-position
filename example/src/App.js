@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import useCaretPosition from 'react-use-cursor-position';
+import useCaretPosition from 'react-use-caret-position';
 
 const Input = () => {
   // Some sort of input state

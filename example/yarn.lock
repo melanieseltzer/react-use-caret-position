@@ -8112,7 +8112,7 @@ react-scripts@^2.1.8:
   optionalDependencies:
     fsevents "1.2.4"
 
-"react-use-cursor-position@link:..":
+"react-use-caret-position@link:..":
   version "0.0.0"
   uid ""
 
