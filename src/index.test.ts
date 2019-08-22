@@ -1,7 +1,7 @@
-import { HelloWorld } from '.';
+import useCaretPosition from '.';
 
 describe('ExampleComponent', () => {
   it('is truthy', () => {
-    expect(HelloWorld).toBeTruthy();
+    expect(useCaretPosition).toBeTruthy();
   });
 });
