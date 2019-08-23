@@ -75,10 +75,6 @@ export default Input;
 
 ## API
 
-### Parameters
-
-Pass `useCaretPosition` a ref of an input or textarea to track.
-
 ### Return Object
 
 | Key           | Description                                               |
