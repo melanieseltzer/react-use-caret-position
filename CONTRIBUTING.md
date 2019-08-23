@@ -11,6 +11,12 @@ $ yarn install
 $ yarn start
 ```
 
+Add a `.env` file in the root of the example dir and add the following:
+
+```
+SKIP_PREFLIGHT_CHECK=true
+```
+
 In a new terminal tab:
 
 ```bash
