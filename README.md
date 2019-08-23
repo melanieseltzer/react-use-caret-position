@@ -1,37 +1,100 @@
-# react-library-boilerplate
+<h1 align="center">
+  🎣
+  <br>
+  react-use-caret-position
+</h1>
 
-![CircleCI (all branches)](https://img.shields.io/circleci/project/github/USERNAME/REPONAME.svg) [![npm (scoped)](https://img.shields.io/npm/v/PACKAGE-NAME-HERE.svg)](https://www.npmjs.com/package/PACKAGE-NAME-HERE) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+![CircleCI (all branches)](https://img.shields.io/circleci/project/github/melanieseltzer/react-use-caret-position.svg) [![npm (scoped)](https://img.shields.io/npm/v/react-use-caret-position.svg)](https://www.npmjs.com/package/react-use-caret-position) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-Created from [create-react-library](https://www.npmjs.com/package/create-react-library) output but modified to satisfy my particular dev style 🤔 This is just a boilerplate to get up and running quickly with react library development. Just clone and copy the code (this is not a CLI like CRL).
+## Motivation
 
-- Typescript with Eslint support
-- My personal Eslint and Prettier config
-- Husky/lint-staged on every commit
-- Opinionated component folder pattern
-- CircleCI instead of Travis
+<img width="300" src="screencap.gif?raw=true" alt="screencap">
+
+When working on a project, I came across an interesting case where the input was losing its caret position after each change. I realized it was happening if there was some sort of side effect in the `onChange` handler. In my case, I was dispatching a Redux action on change and nothing else, but the side effect could be anything, really.
+
+`react-use-caret-position` attempts to fix that by keeping track of the caret position and setting it on render.
 
 ## Install
 
+With npm...
+
 ```bash
-npm install --save ...
+npm install react-use-caret-position
+```
+
+With yarn...
+
+```bash
+yarn add react-use-caret-position
 ```
 
 ## Usage
 
-```tsx
-import React, { Component } from 'react';
-import { HelloWorld } from '...';
-
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        <HelloWorld />
-      </div>
-    );
-  }
-}
+<!-- prettier-ignore -->
+```js
+const caret = useCaretPosition(inputRef);
+const { start, end, updateCaret, setCaretPosition } = caret;
 ```
+
+Like so...
+
+<!-- prettier-ignore -->
+```js
+import React, { useEffect, useState, useRef } from 'react';
+import useCaretPosition from 'react-use-caret-position';
+
+const Input = () => {
+  // Some sort of input state
+  const [text, setText] = useState('hello world');
+
+  // Must create a ref
+  const inputRef = useRef();
+
+  // Pass the ref into the hook
+  const { updateCaret, setCaretPosition } = useCaretPosition(inputRef);
+
+  useEffect(() => {
+    // Set the caret position on mount + update
+    setCaretPosition();
+  });
+
+  const handleChange = e => {
+    // Some sort of side effect in the onChange handler
+    // which normally makes the input lose its position
+    const inputToUpperCase = e.target.value.toUpperCase();
+    setText(inputToUpperCase);
+
+    // `updateCaret` will update the selectionStart and selectionEnd
+    // values of the input
+    updateCaret();
+  };
+
+  return (
+    <input 
+      ref={ref} 
+      value={value} 
+      onChange={onChange} 
+    />
+  );
+};
+
+export default Input;
+```
+
+## API
+
+### Parameters
+
+Pass `useCaretPosition` a ref of an input or textarea to track.
+
+### Return Object
+
+| Key                | Description                                                  |
+| :----------------- | :----------------------------------------------------------- |
+| `start`            | `number` containing the current state of `selectionStart`    |
+| `end`              | `number` containing the current state of `selectionEnd`      |
+| `updateCaret`      | `function` which updates both caret states                   |
+| `setCaretPosition` | `function` which sets the position using `setSelectionRange` |
 
 ## Thanks ❤️
 

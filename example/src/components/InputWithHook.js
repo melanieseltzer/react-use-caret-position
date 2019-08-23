@@ -16,9 +16,8 @@ const InputWithRef = () => {
   const inputRef = useRef();
 
   // Pass the ref into the hook
-  const { start, end, updateCaret, setCaretPosition } = useCaretPosition(
-    inputRef
-  );
+  const caret = useCaretPosition(inputRef);
+  const { start, end, updateCaret, setCaretPosition } = caret;
 
   useEffect(() => {
     // Set the caret position on mount + update
