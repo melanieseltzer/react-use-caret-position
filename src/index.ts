@@ -1,8 +1,8 @@
-import { useState, RefObject } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
-function useCaretPosition(
-  node: RefObject<HTMLInputElement | HTMLTextAreaElement>
-) {
+export function useCaretPosition() {
+  const node = useRef();
+
   const [start, setStart] = useState<number | null>(0);
   const [end, setEnd] = useState<number | null>(0);
 
@@ -18,15 +18,13 @@ function useCaretPosition(
     }
   };
 
-  const setCaretPosition = () => {
+  useEffect(() => {
     // Set the caret position by setting the selection range with the
     // most current start and end values
     if (node && node.current && start && end) {
       node.current.setSelectionRange(start, end);
     }
-  };
+  });
 
-  return { start, end, updateCaret, setCaretPosition };
+  return { start, end, inputRef: node, updateCaret };
 }
-
-export default useCaretPosition;
