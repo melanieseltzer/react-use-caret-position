@@ -33,30 +33,22 @@ yarn add react-use-caret-position
 <!-- prettier-ignore -->
 ```js
 const caret = useCaretPosition(inputRef);
-const { start, end, updateCaret, setCaretPosition } = caret;
+const { start, end, updateCaret } = caret;
 ```
 
 Like so...
 
 <!-- prettier-ignore -->
 ```js
-import React, { useEffect, useState, useRef } from 'react';
-import useCaretPosition from 'react-use-caret-position';
+import React, { useState } from 'react';
+import { useCaretPosition } from 'react-use-caret-position';
 
 const Input = () => {
   // Some sort of input state
   const [text, setText] = useState('hello world');
 
-  // Must create a ref
-  const inputRef = useRef();
-
-  // Pass the ref into the hook
-  const { updateCaret, setCaretPosition } = useCaretPosition(inputRef);
-
-  useEffect(() => {
-    // Set the caret position on mount + update
-    setCaretPosition();
-  });
+  // Track the caret position with the hook
+  const { ref: inputRef, updateCaret } = useCaretPosition();
 
   const handleChange = e => {
     // Some sort of side effect in the onChange handler
@@ -71,9 +63,9 @@ const Input = () => {
 
   return (
     <input 
-      ref={ref} 
+      ref={inputRef} 
       value={value} 
-      onChange={onChange} 
+      onChange={handleChange} 
     />
   );
 };
@@ -89,12 +81,12 @@ Pass `useCaretPosition` a ref of an input or textarea to track.
 
 ### Return Object
 
-| Key                | Description                                                  |
-| :----------------- | :----------------------------------------------------------- |
-| `start`            | `number` containing the current state of `selectionStart`    |
-| `end`              | `number` containing the current state of `selectionEnd`      |
-| `updateCaret`      | `function` which updates both caret states                   |
-| `setCaretPosition` | `function` which sets the position using `setSelectionRange` |
+| Key           | Description                                               |
+| :------------ | :-------------------------------------------------------- |
+| `ref`         | `React.RefObject` that should be assigned to your input   |
+| `start`       | `number` containing the current state of `selectionStart` |
+| `end`         | `number` containing the current state of `selectionEnd`   |
+| `updateCaret` | `function` which updates both caret states                |
 
 ## Thanks ❤️
 

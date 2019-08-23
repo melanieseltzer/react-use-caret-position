@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
-import useCaretPosition from 'react-use-caret-position';
+import React, { useState } from 'react';
+import { useCaretPosition } from 'react-use-caret-position';
 import Input from './Input';
 
 const highlight = {
@@ -12,17 +12,8 @@ const InputWithRef = () => {
   // Some sort of input state
   const [text, setText] = useState('hello world');
 
-  // Must create a ref
-  const inputRef = useRef();
-
-  // Pass the ref into the hook
-  const caret = useCaretPosition(inputRef);
-  const { start, end, updateCaret, setCaretPosition } = caret;
-
-  useEffect(() => {
-    // Set the caret position on mount + update
-    setCaretPosition();
-  });
+  // Track the caret position with the hook
+  const { start, end, ref: inputRef, updateCaret } = useCaretPosition();
 
   const handleChange = e => {
     // Some sort of side effect in the onChange handler
