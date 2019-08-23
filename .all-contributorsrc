@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "superhawk610",
+      "name": "Aaron Ross",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/18172185?v=4",
+      "profile": "https://aaronross.tech",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "react-use-caret-position",
+  "projectOwner": "melanieseltzer",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
