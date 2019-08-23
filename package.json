@@ -24,7 +24,7 @@
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build",
+    "deploy": "gh-pages -m 'Updates [ci skip]' -d example/build",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {

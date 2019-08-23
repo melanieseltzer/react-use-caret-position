@@ -5,9 +5,6 @@
 version: 2
 jobs:
   build:
-    branches:
-      ignore:
-        - gh-pages
     docker:
       # specify the version you desire here
       - image: circleci/node:10.16.3
@@ -36,5 +33,11 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
+      # lint
+      - run: yarn lint
+
+      # typecheck
+      - run: yarn typecheck
+
+      # run tests
       - run: yarn test
