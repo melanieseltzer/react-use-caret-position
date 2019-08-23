@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 
 export function useCaretPosition() {
-  const node = useRef<HTMLInputElement | HTMLTextAreaElement>();
-
+  // const node = useRef() as MutableRefObject<
+  //   HTMLInputElement | HTMLTextAreaElement
+  // >;
+  const node = useRef<any>(null);
   const [start, setStart] = useState<number | null>(0);
   const [end, setEnd] = useState<number | null>(0);
 
