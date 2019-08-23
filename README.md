@@ -83,7 +83,7 @@ Pass `useCaretPosition` a ref of an input or textarea to track.
 
 | Key           | Description                                               |
 | :------------ | :-------------------------------------------------------- |
-| `inputRef`    | `React.RefObject` that should be assigned to your input   |
+| `ref`         | `React.RefObject` that should be assigned to your input   |
 | `start`       | `number` containing the current state of `selectionStart` |
 | `end`         | `number` containing the current state of `selectionEnd`   |
 | `updateCaret` | `function` which updates both caret states                |
