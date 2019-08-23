@@ -47,8 +47,8 @@ const Input = () => {
   // Some sort of input state
   const [text, setText] = useState('hello world');
 
-  // Pass the ref into the hook
-  const { inputRef, updateCaret } = useCaretPosition();
+  // Track the caret position with the hook
+  const { ref: inputRef, updateCaret } = useCaretPosition();
 
   const handleChange = e => {
     // Some sort of side effect in the onChange handler

@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 
 export function useCaretPosition() {
-  const node = useRef();
+  const node = useRef<HTMLInputElement | HTMLTextAreaElement>();
 
   const [start, setStart] = useState<number | null>(0);
   const [end, setEnd] = useState<number | null>(0);
@@ -26,5 +26,5 @@ export function useCaretPosition() {
     }
   });
 
-  return { start, end, inputRef: node, updateCaret };
+  return { start, end, ref: node, updateCaret };
 }
