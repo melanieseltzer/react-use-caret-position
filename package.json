@@ -24,7 +24,8 @@
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "react": "^16.9.0",
@@ -69,7 +70,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && yarn typecheck && yarn test"
     }
   },
   "lint-staged": {
