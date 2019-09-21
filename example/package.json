@@ -9,7 +9,7 @@
     "react": "link:../node_modules/react",
     "react-use-caret-position": "link:..",
     "react-dom": "link:../node_modules/react-dom",
-    "react-scripts": "^2.1.8"
+    "react-scripts": "^3.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
