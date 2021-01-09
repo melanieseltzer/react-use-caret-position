@@ -16,9 +16,12 @@ describe('useCaretPosition', () => {
     mount(<input ref={ref} />);
 
     act(() => {
-      ref.current.setSelectionRange = jest.fn();
-      ref.current.selectionStart = 3;
-      ref.current.selectionEnd = 3;
+      ref.current = {
+        setSelectionRange: jest.fn(),
+        selectionStart: 3,
+        selectionEnd: 3
+      };
+
       result.current.updateCaret();
     });
 
