@@ -14,6 +14,8 @@ When working on a project, I came across an interesting case where the input was
 
 `react-use-caret-position` attempts to fix that by keeping track of the caret position and setting it on render.
 
+Demo: https://melanieseltzer.github.io/react-use-caret-position/
+
 ## Install
 
 With npm...
