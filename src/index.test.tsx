@@ -20,7 +20,7 @@ describe('useCaretPosition', () => {
         setSelectionRange: jest.fn(),
         selectionStart: 3,
         selectionEnd: 3
-      };
+      } as any;
 
       result.current.updateCaret();
     });

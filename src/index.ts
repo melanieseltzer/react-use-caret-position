@@ -1,19 +1,19 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 
-export function useCaretPosition() {
-  const node = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
+export function useCaretPosition<
+  T extends HTMLInputElement | HTMLTextAreaElement = HTMLInputElement
+>() {
+  const node = useRef<T>(null);
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(0);
 
   const updateCaret = useCallback(() => {
     // Get the updated caret postions from the ref passed in
     if (node && node.current) {
-      const { selectionStart } = node.current;
-      const { selectionEnd } = node.current;
+      const { selectionStart, selectionEnd } = node.current;
 
-      // Update the state
-      setStart(selectionStart);
-      setEnd(selectionEnd);
+      setStart(selectionStart!);
+      setEnd(selectionEnd!);
     }
   }, []);
 
