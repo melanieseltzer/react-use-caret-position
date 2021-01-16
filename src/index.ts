@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 
-export function useCaretPosition<TRefValue extends any = any>() {
-  const node = useRef<TRefValue>(null);
+export function useCaretPosition() {
+  const node = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(0);
 
