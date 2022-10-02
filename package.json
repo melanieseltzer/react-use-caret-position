@@ -2,7 +2,7 @@
   "name": "react-use-caret-position",
   "version": "1.0.3",
   "description": "A React hook to keep track of the caret position in an input",
-  "author": "Melanie Seltzer <melleh11@gmail.com>",
+  "author": "Melanie Seltzer <melanie.seltzer1@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/melanieseltzer/react-use-caret-position#readme",
   "repository": {
@@ -23,8 +23,8 @@
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -m 'Updates [ci skip]' -d example/build",
+    "predeploy-example": "cd example && yarn install && yarn run build",
+    "deploy-example": "gh-pages -m 'Updates [ci skip]' -d example/build",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
