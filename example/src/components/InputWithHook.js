@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useCaretPosition } from 'react-use-caret-position';
+
 import Input from './Input';
 
 const highlight = {
   background: '#ffcccc',
   padding: '2px',
-  fontWeight: '400'
+  fontWeight: '400',
 };
 
 const InputWithRef = () => {
@@ -32,7 +33,7 @@ const InputWithRef = () => {
         maxWidth: '700px',
         background: '#eee',
         padding: '0 1rem',
-        marginBottom: '1rem'
+        marginBottom: '1rem',
       }}
     >
       <h2 style={{ fontWeight: '400' }}>Input with useCaretPosition</h2>

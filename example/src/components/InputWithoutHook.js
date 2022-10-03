@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Input from '../components/Input';
+
+import Input from './Input';
 
 const InputWithoutHook = () => {
   // Some sort of input state
@@ -17,7 +18,7 @@ const InputWithoutHook = () => {
         maxWidth: '700px',
         background: '#eee',
         padding: '0 1rem',
-        marginBottom: '1rem'
+        marginBottom: '1rem',
       }}
     >
       <h2 style={{ fontWeight: '400' }}>Input without useCaretPosition</h2>

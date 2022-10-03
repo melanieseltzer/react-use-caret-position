@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export function useCaretPosition<
   T extends HTMLInputElement | HTMLTextAreaElement = HTMLInputElement
@@ -9,7 +9,7 @@ export function useCaretPosition<
 
   const updateCaret = useCallback(() => {
     // Get the updated caret postions from the ref passed in
-    if (node && node.current) {
+    if (node.current) {
       const { selectionStart, selectionEnd } = node.current;
 
       setStart(selectionStart!);
@@ -20,7 +20,7 @@ export function useCaretPosition<
   useEffect(() => {
     // Set the caret position by setting the selection range with the
     // most current start and end values
-    if (node && node.current) {
+    if (node.current) {
       node.current.setSelectionRange(start, end);
     }
   });

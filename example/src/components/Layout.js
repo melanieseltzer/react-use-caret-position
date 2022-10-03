@@ -8,7 +8,7 @@ const Layout = ({ children }) => (
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
     }}
   >
     <h1>useCaretPosition</h1>

@@ -1,6 +1,7 @@
 import React from 'react';
+import { act, renderHook } from '@testing-library/react-hooks';
 import { mount } from 'enzyme';
-import { renderHook, act } from '@testing-library/react-hooks';
+
 import { useCaretPosition } from '.';
 
 describe('useCaretPosition', () => {
@@ -15,11 +16,12 @@ describe('useCaretPosition', () => {
     const { ref } = result.current;
     mount(<input ref={ref} />);
 
-    act(() => {
+    void act(() => {
+      // @ts-ignore disabling this temporarily
       ref.current = {
         setSelectionRange: jest.fn(),
         selectionStart: 3,
-        selectionEnd: 3
+        selectionEnd: 3,
       } as any;
 
       result.current.updateCaret();
