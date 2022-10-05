@@ -8,12 +8,6 @@ module.exports = {
     '@mels/prettier',
   ],
 
-  rules: {
-    'import/no-anonymous-default-export': 'off',
-    'react/display-name': 'off',
-    'react/prop-types': 'off',
-  },
-
   overrides: [
     {
       files: ['**/*.ts?(x)'],
@@ -29,6 +23,19 @@ module.exports = {
     {
       files: ['*.md', '*.mdx'],
       extends: ['plugin:mdx/recommended'],
+    },
+    {
+      files: ['docs/**/*'],
+      rules: {
+        'react/display-name': 'off',
+        'react/prop-types': 'off',
+      },
+    },
+    {
+      files: ['rollup.config.js'],
+      rules: {
+        'import/no-anonymous-default-export': 'off',
+      },
     },
   ],
 };
