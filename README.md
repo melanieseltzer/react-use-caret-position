@@ -4,7 +4,7 @@
   react-use-caret-position
 </h1>
 
-![CircleCI (all branches)](https://img.shields.io/circleci/project/github/melanieseltzer/react-use-caret-position.svg) [![npm (scoped)](https://img.shields.io/npm/v/react-use-caret-position.svg)](https://www.npmjs.com/package/react-use-caret-position) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![npm (scoped)](https://img.shields.io/npm/v/react-use-caret-position.svg)](https://www.npmjs.com/package/react-use-caret-position) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 Live demo: https://melanieseltzer.github.io/reactuse-caret-position/
 
