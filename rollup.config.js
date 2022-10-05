@@ -29,6 +29,7 @@ export default {
     typescript({
       rollupCommonJSResolveHack: true,
       clean: true,
+      tsconfig: 'tsconfig.build.json',
     }),
     commonjs(),
   ],

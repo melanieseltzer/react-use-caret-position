@@ -26,10 +26,10 @@
     ]
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "rimraf dist && rollup -c",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "lint": "eslint --ext .js,.ts,.tsx .",
+    "lint": "eslint --ext .js,.ts,.tsx,.mdx .",
     "prepare": "husky install",
     "prepublishOnly": "yarn build",
     "typecheck": "tsc --noEmit",
@@ -67,6 +67,7 @@
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rimraf": "^3.0.2",
     "rollup": "^1.19.4",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.0.2",

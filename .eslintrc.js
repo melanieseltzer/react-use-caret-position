@@ -3,6 +3,7 @@ module.exports = {
     '@mels/base',
     '@mels/typescript',
     '@mels/react',
+    '@mels/react/jsx-runtime',
     '@mels/jest',
     '@mels/prettier',
   ],
@@ -22,15 +23,7 @@ module.exports = {
       },
 
       parserOptions: {
-        project: './tsconfig.eslint.json',
-      },
-
-      settings: {
-        'import/resolver': {
-          typescript: {
-            project: './tsconfig.eslint.json',
-          },
-        },
+        project: './tsconfig.json',
       },
     },
     {
