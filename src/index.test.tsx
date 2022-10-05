@@ -1,32 +1,38 @@
-import { act, renderHook } from '@testing-library/react-hooks';
-import { mount } from 'enzyme';
+import * as React from 'react';
+import {
+  act,
+  fireEvent,
+  render,
+  renderHook,
+  screen,
+} from '@testing-library/react';
 
 import { useCaretPosition } from '.';
 
 describe('useCaretPosition', () => {
-  it('should initialize positions', () => {
+  it('should initialize start and end positions', () => {
     const { result } = renderHook(() => useCaretPosition());
     expect(result.current.start).toBe(0);
     expect(result.current.end).toBe(0);
   });
 
-  it('should update start and end from selectionStart and selectionEnd after calling updateCaret', () => {
+  it('should update caret position when calling updateCaret', () => {
     const { result } = renderHook(() => useCaretPosition());
     const { ref } = result.current;
-    mount(<input ref={ref} />);
 
-    void act(() => {
-      // @ts-ignore disabling this temporarily
-      ref.current = {
-        setSelectionRange: jest.fn(),
-        selectionStart: 3,
-        selectionEnd: 3,
-      } as any;
+    render(<input ref={ref} aria-label="test-input" />);
 
+    const input = screen.getByLabelText('test-input');
+
+    fireEvent.change(input, {
+      target: { value: 'Hello world!' },
+    });
+
+    act(() => {
       result.current.updateCaret();
     });
 
-    expect(result.current.start).toBe(3);
-    expect(result.current.end).toBe(3);
+    expect(result.current.start).toBe(12);
+    expect(result.current.end).toBe(12);
   });
 });
