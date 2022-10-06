@@ -6,6 +6,9 @@ on:
       - main
   pull_request: {}
 
+env:
+  HUSKY: 0
+
 jobs:
   lint:
     # ignore all-contributors/release PRs
