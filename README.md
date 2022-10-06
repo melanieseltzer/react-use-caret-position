@@ -8,7 +8,7 @@
 
 Live demo: https://react-use-caret-position.netlify.app
 
-## Motivation
+## Motivation!
 
 If there is some side effect/async code in an input's `onChange` event handler (e.g. dispatching a Redux action without doing anything else, format text in some way like uppercase, etc), the caret will annoyingly be booted to the end of the input after each keystroke.
 
