@@ -8,8 +8,8 @@ on:
 
 jobs:
   lint:
-    # ignore all-contributors PRs
-    if: ${{ !contains(github.head_ref, 'all-contributors') }}
+    # ignore all-contributors/release PRs
+    if: ${{ !contains(github.head_ref, 'all-contributors') && !contains(github.head_ref, 'changeset-release') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -28,8 +28,8 @@ jobs:
         run: yarn lint --max-warnings 0
 
   typecheck:
-    # ignore all-contributors PRs
-    if: ${{ !contains(github.head_ref, 'all-contributors') }}
+    # ignore all-contributors/release PRs
+    if: ${{ !contains(github.head_ref, 'all-contributors') && !contains(github.head_ref, 'changeset-release') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -48,8 +48,8 @@ jobs:
         run: yarn typecheck
 
   test:
-    # ignore all-contributors PRs
-    if: ${{ !contains(github.head_ref, 'all-contributors') }}
+    # ignore all-contributors/release PRs
+    if: ${{ !contains(github.head_ref, 'all-contributors') && !contains(github.head_ref, 'changeset-release') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -66,3 +66,30 @@ jobs:
 
       - name: Run tests
         run: yarn test
+
+  release:
+    needs: [lint, typecheck, test]
+    if:
+      ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' &&
+      github.repository == 'melanieseltzer/react-use-caret-position' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
+
+      - uses: bahmutov/npm-install@v1
+        with:
+          useRollingCache: true
+          install-command: yarn --frozen-lockfile
+
+      - name: Create Release Pull Request or Publish to npm
+        uses: changesets/action@v1
+        with:
+          publish: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

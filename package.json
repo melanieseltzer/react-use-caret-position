@@ -31,10 +31,11 @@
     "test:watch": "jest --watchAll",
     "lint": "eslint --ext .js,.ts,.tsx,.mdx .",
     "prepare": "husky install",
-    "prepublishOnly": "yarn build",
     "typecheck": "tsc --noEmit",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "changeset": "changeset",
+    "release": "yarn build && changeset publish"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
@@ -43,6 +44,8 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/runtime": "^7.5.5",
+    "@changesets/changelog-github": "^0.4.7",
+    "@changesets/cli": "^2.25.0",
     "@mels/eslint-config-base": "^1.0.1",
     "@mels/eslint-config-jest": "^1.0.0",
     "@mels/eslint-config-prettier": "^1.0.0",

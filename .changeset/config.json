@@ -1,0 +1,11 @@
+{
+  "changelog": [
+    "@changesets/changelog-github",
+    {
+      "repo": "melanieseltzer/react-use-caret-position"
+    }
+  ],
+  "commit": false,
+  "access": "public",
+  "baseBranch": "main"
+}
