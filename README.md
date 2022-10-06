@@ -6,7 +6,7 @@
 
 [![npm (scoped)](https://img.shields.io/npm/v/react-use-caret-position.svg)](https://www.npmjs.com/package/react-use-caret-position) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
-Live demo: https://melanieseltzer.github.io/reactuse-caret-position/
+Live demo: https://react-use-caret-position.netlify.app
 
 ## Motivation
 
@@ -29,13 +29,6 @@ yarn add react-use-caret-position
 ```
 
 ## Usage
-
-<!-- prettier-ignore -->
-```js
-const { ref, start, end, updateCaret } = useCaretPosition();
-```
-
-Like so...
 
 <!-- prettier-ignore -->
 ```js
@@ -71,14 +64,19 @@ export default Input;
 
 ## API
 
+<!-- prettier-ignore -->
+```js
+const { ref, start, end, updateCaret } = useCaretPosition();
+```
+
 ### Return Object
 
-| Key           | Description                                               |
-| :------------ | :-------------------------------------------------------- |
-| `ref`         | `React.RefObject` that should be assigned to your input   |
-| `start`       | `number` containing the current state of `selectionStart` |
-| `end`         | `number` containing the current state of `selectionEnd`   |
-| `updateCaret` | `function` which updates both caret states                |
+| Key           | Type              | Description                                  |
+| :------------ | :---------------- | :------------------------------------------- |
+| `ref`         | `React.RefObject` | Ref that should be assigned to your input    |
+| `start`       | `number`          | Current start position of the text selection |
+| `end`         | `number`          | Current end position of the text selection   |
+| `updateCaret` | `() => void`      | Function to set the caret position           |
 
 ## License
 

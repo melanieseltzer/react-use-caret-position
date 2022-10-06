@@ -1,7 +1,7 @@
-export const decorators = [
-  Story => (
-    <div className="markdown-body" style={{ maxWidth: 980 }}>
-      <Story />
-    </div>
-  ),
-];
+export const parameters = {
+  options: {
+    storySort: {
+      order: ['Installation', 'The Problem It Solves', 'Hook Demo'],
+    },
+  },
+};
