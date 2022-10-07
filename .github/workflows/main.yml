@@ -15,9 +15,11 @@ jobs:
     if: ${{ !contains(github.head_ref, 'all-contributors') && !contains(github.head_ref, 'changeset-release') }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+      - name: Set up node
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: yarn
@@ -33,9 +35,11 @@ jobs:
     if: ${{ !contains(github.head_ref, 'all-contributors') && !contains(github.head_ref, 'changeset-release') }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+      - name: Set up node
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: yarn
@@ -51,9 +55,11 @@ jobs:
     if: ${{ !contains(github.head_ref, 'all-contributors') && !contains(github.head_ref, 'changeset-release') }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+      - name: Set up node
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: yarn
@@ -71,9 +77,11 @@ jobs:
       github.repository == 'melanieseltzer/react-use-caret-position' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+      - name: Set up node
+        uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: yarn
