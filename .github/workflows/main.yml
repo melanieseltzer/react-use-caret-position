@@ -15,6 +15,9 @@ jobs:
     if: ${{ !contains(github.head_ref, 'all-contributors') && !contains(github.head_ref, 'changeset-release') }}
     runs-on: ubuntu-latest
     steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.10.1
+
       - name: Checkout repo
         uses: actions/checkout@v3
 
@@ -35,6 +38,9 @@ jobs:
     if: ${{ !contains(github.head_ref, 'all-contributors') && !contains(github.head_ref, 'changeset-release') }}
     runs-on: ubuntu-latest
     steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.10.1
+
       - name: Checkout repo
         uses: actions/checkout@v3
 
@@ -55,6 +61,9 @@ jobs:
     if: ${{ !contains(github.head_ref, 'all-contributors') && !contains(github.head_ref, 'changeset-release') }}
     runs-on: ubuntu-latest
     steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.10.1
+
       - name: Checkout repo
         uses: actions/checkout@v3
 
@@ -77,6 +86,9 @@ jobs:
       github.repository == 'melanieseltzer/react-use-caret-position' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.10.1
+
       - name: Checkout repo
         uses: actions/checkout@v3
 
