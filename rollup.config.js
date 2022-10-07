@@ -1,8 +1,5 @@
-import commonjs from 'rollup-plugin-commonjs';
-import resolve from 'rollup-plugin-node-resolve';
 import external from 'rollup-plugin-peer-deps-external';
 import typescript from 'rollup-plugin-typescript2';
-import url from 'rollup-plugin-url';
 
 import pkg from './package.json';
 
@@ -24,13 +21,9 @@ export default {
   ],
   plugins: [
     external(),
-    url(),
-    resolve(),
     typescript({
-      rollupCommonJSResolveHack: true,
       clean: true,
       tsconfig: 'tsconfig.build.json',
     }),
-    commonjs(),
   ],
 };
