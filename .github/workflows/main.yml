@@ -22,10 +22,8 @@ jobs:
           node-version: 16
           cache: yarn
 
-      - uses: bahmutov/npm-install@v1
-        with:
-          useRollingCache: true
-          install-command: yarn --frozen-lockfile
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --prefer-offline
 
       - name: Lint project
         run: yarn lint --max-warnings 0
@@ -42,10 +40,8 @@ jobs:
           node-version: 16
           cache: yarn
 
-      - uses: bahmutov/npm-install@v1
-        with:
-          useRollingCache: true
-          install-command: yarn --frozen-lockfile
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --prefer-offline
 
       - name: Check types
         run: yarn typecheck
@@ -62,10 +58,8 @@ jobs:
           node-version: 16
           cache: yarn
 
-      - uses: bahmutov/npm-install@v1
-        with:
-          useRollingCache: true
-          install-command: yarn --frozen-lockfile
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --prefer-offline
 
       - name: Run tests
         run: yarn test
@@ -84,10 +78,8 @@ jobs:
           node-version: 16
           cache: yarn
 
-      - uses: bahmutov/npm-install@v1
-        with:
-          useRollingCache: true
-          install-command: yarn --frozen-lockfile
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --prefer-offline
 
       - name: Create Release Pull Request or Publish to npm
         uses: changesets/action@v1
