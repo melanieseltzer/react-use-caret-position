@@ -1,8 +1,8 @@
 ---
-'react-use-caret-position': patch
+'react-use-caret-position': minor
 ---
 
-Clean up package.json after switching bundler to [Microbundle](https://github.com/developit/microbundle):
+Clean up package.json:
 
 - Remove `jsnext:main` as it's deprecated and replaced by `module` field
 - Add an `exports` map
