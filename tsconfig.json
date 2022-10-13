@@ -16,7 +16,9 @@
     "noUnusedParameters": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "jsxFactory": "",
+    "jsxFragmentFactory": ""
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "test/**/*"]
 }

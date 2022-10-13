@@ -6,7 +6,7 @@ import {
   screen,
 } from '@testing-library/react';
 
-import { useCaretPosition } from '.';
+import { useCaretPosition } from '../src';
 
 describe('useCaretPosition', () => {
   it('should initialize start and end positions', () => {
