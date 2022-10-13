@@ -81,8 +81,7 @@ jobs:
 
   release:
     needs: [lint, typecheck, test]
-    if:
-      ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' &&
+    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' &&
       github.repository == 'melanieseltzer/react-use-caret-position' }}
     runs-on: ubuntu-latest
     steps:

@@ -1,3 +1,7 @@
 node_modules
 dist
 coverage
+storybook-static
+.changeset
+.husky
+.vscode
