@@ -39,7 +39,7 @@
   },
   "scripts": {
     "build": "rimraf dist && microbundle --tsconfig tsconfig.build.json",
-    "dev": "microbundle watch",
+    "dev": "microbundle watch --tsconfig tsconfig.build.json",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "lint": "eslint --ext .js,.cjs,.ts,.tsx,.mdx .",
