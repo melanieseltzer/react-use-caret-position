@@ -28,7 +28,7 @@ module.exports = {
       extends: ['plugin:mdx/recommended'],
     },
     {
-      files: ['docs/**/*'],
+      files: ['stories/**/*'],
       rules: {
         'react/display-name': 'off',
         'react/prop-types': 'off',
