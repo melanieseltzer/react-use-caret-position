@@ -1,20 +1,18 @@
 <h1 align="center">
   🎣
-  <br>
+  <br />
   react-use-caret-position
 </h1>
 
-![CircleCI (all branches)](https://img.shields.io/circleci/project/github/melanieseltzer/react-use-caret-position.svg) [![npm (scoped)](https://img.shields.io/npm/v/react-use-caret-position.svg)](https://www.npmjs.com/package/react-use-caret-position) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![npm (scoped)](https://img.shields.io/npm/v/react-use-caret-position.svg)](https://www.npmjs.com/package/react-use-caret-position) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+
+Live demo: https://react-use-caret-position.netlify.app
 
 ## Motivation
 
-<img width="300" src="screencap.gif?raw=true" alt="screencap">
+If there is some side effect/async code in an input's `onChange` event handler (e.g. dispatching a Redux action without doing anything else, format text in some way like uppercase, etc), the caret will annoyingly be booted to the end of the input after each keystroke.
 
-When working on a project, I came across an interesting case where the input was losing its caret position after each change. I realized it was happening if there was some sort of side effect in the `onChange` handler. In my case, I was dispatching a Redux action on change and nothing else, but the side effect could be anything, really.
-
-`react-use-caret-position` attempts to fix that by keeping track of the caret position and setting it on render.
-
-Demo: https://melanieseltzer.github.io/react-use-caret-position/
+`react-use-caret-position` fixes this undesirable behavior by keeping track of the caret position and setting it on render.
 
 ## Install
 
@@ -34,38 +32,27 @@ yarn add react-use-caret-position
 
 <!-- prettier-ignore -->
 ```js
-const caret = useCaretPosition(inputRef);
-const { start, end, updateCaret } = caret;
-```
-
-Like so...
-
-<!-- prettier-ignore -->
-```js
 import React, { useState } from 'react';
 import { useCaretPosition } from 'react-use-caret-position';
 
 const Input = () => {
-  // Some sort of input state
   const [text, setText] = useState('hello world');
 
-  // Track the caret position with the hook
-  const { ref: inputRef, updateCaret } = useCaretPosition();
+  const { ref, updateCaret } = useCaretPosition();
 
   const handleChange = e => {
-    // Some sort of side effect in the onChange handler
-    // which normally makes the input lose its position
+    // Some side effect in the `onChange` handler (could be anything)
     const inputToUpperCase = e.target.value.toUpperCase();
+
     setText(inputToUpperCase);
 
-    // `updateCaret` will update the selectionStart and selectionEnd
-    // values of the input
+    // Track the caret position with the hook
     updateCaret();
   };
 
   return (
     <input 
-      ref={inputRef} 
+      ref={ref}
       value={value} 
       onChange={handleChange} 
     />
@@ -77,18 +64,19 @@ export default Input;
 
 ## API
 
+<!-- prettier-ignore -->
+```js
+const { ref, start, end, updateCaret } = useCaretPosition();
+```
+
 ### Return Object
 
-| Key           | Description                                               |
-| :------------ | :-------------------------------------------------------- |
-| `ref`         | `React.RefObject` that should be assigned to your input   |
-| `start`       | `number` containing the current state of `selectionStart` |
-| `end`         | `number` containing the current state of `selectionEnd`   |
-| `updateCaret` | `function` which updates both caret states                |
-
-## Thanks ❤️
-
-- [create-react-library](https://github.com/transitive-bullshit/create-react-library/)
+| Key           | Type              | Description                                  |
+| :------------ | :---------------- | :------------------------------------------- |
+| `ref`         | `React.RefObject` | Ref that should be assigned to your input    |
+| `start`       | `number`          | Current start position of the text selection |
+| `end`         | `number`          | Current end position of the text selection   |
+| `updateCaret` | `() => void`      | Function to set the caret position           |
 
 ## License
 

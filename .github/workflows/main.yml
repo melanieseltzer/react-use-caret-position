@@ -1,0 +1,109 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: {}
+
+env:
+  HUSKY: 0
+
+jobs:
+  lint:
+    # ignore all-contributors/release PRs
+    if: ${{ !contains(github.head_ref, 'all-contributors') && !contains(github.head_ref, 'changeset-release') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.10.1
+
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --prefer-offline
+
+      - name: Lint project
+        run: yarn lint --max-warnings 0
+
+  typecheck:
+    # ignore all-contributors/release PRs
+    if: ${{ !contains(github.head_ref, 'all-contributors') && !contains(github.head_ref, 'changeset-release') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.10.1
+
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --prefer-offline
+
+      - name: Check types
+        run: yarn typecheck
+
+  test:
+    # ignore all-contributors/release PRs
+    if: ${{ !contains(github.head_ref, 'all-contributors') && !contains(github.head_ref, 'changeset-release') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.10.1
+
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --prefer-offline
+
+      - name: Run tests
+        run: yarn test
+
+  release:
+    needs: [lint, typecheck, test]
+    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' &&
+      github.repository == 'melanieseltzer/react-use-caret-position' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.10.1
+
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile --prefer-offline
+
+      - name: Create Release Pull Request or Publish to npm
+        uses: changesets/action@v1
+        with:
+          publish: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
