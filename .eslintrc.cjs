@@ -8,16 +8,19 @@ module.exports = {
     '@mels/prettier',
   ],
 
+  // unignore dotfile js files (eslint ignores dotfiles by default)
+  ignorePatterns: ['!.*.cjs'],
+
   overrides: [
     {
       files: ['**/*.ts?(x)'],
 
-      rules: {
-        '@typescript-eslint/no-unsafe-assignment': 'off',
-      },
-
       parserOptions: {
         project: './tsconfig.json',
+      },
+
+      rules: {
+        '@typescript-eslint/no-unsafe-assignment': 'off',
       },
     },
     {
@@ -25,16 +28,10 @@ module.exports = {
       extends: ['plugin:mdx/recommended'],
     },
     {
-      files: ['docs/**/*'],
+      files: ['stories/**/*'],
       rules: {
         'react/display-name': 'off',
         'react/prop-types': 'off',
-      },
-    },
-    {
-      files: ['rollup.config.js'],
-      rules: {
-        'import/no-anonymous-default-export': 'off',
       },
     },
   ],
