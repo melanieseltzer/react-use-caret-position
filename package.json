@@ -5,6 +5,11 @@
   "author": "Melanie Seltzer <melanie.seltzer1@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/melanieseltzer/react-use-caret-position#readme",
+  "keywords": [
+    "react",
+    "hooks",
+    "typescript"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/melanieseltzer/react-use-caret-position.git"
