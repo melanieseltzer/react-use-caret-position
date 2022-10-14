@@ -14,6 +14,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "melanieseltzer",
+      "name": "Melanie Seltzer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17421347?v=4",
+      "profile": "https://www.melanieseltzer.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -21,5 +30,6 @@
   "projectOwner": "melanieseltzer",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
