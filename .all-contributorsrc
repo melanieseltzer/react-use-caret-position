@@ -20,5 +20,6 @@
   "projectName": "react-use-caret-position",
   "projectOwner": "melanieseltzer",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
