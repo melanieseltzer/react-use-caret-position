@@ -1,6 +1,6 @@
 {
   "name": "react-use-caret-position",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "A React hook to keep track of the caret position in an input",
   "author": "Melanie Seltzer <melanie.seltzer1@gmail.com>",
   "license": "MIT",
