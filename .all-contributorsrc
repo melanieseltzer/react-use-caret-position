@@ -30,5 +30,6 @@
   "projectOwner": "melanieseltzer",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "commitConvention": "angular"
+  "commitConvention": "angular",
+  "skipCi": true
 }
