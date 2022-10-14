@@ -7,6 +7,5 @@
   ],
   "commit": false,
   "access": "public",
-  "baseBranch": "main",
-  "title": "Version Packages [skip ci]"
+  "baseBranch": "main"
 }
