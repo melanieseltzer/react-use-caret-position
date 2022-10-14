@@ -87,12 +87,19 @@ MIT © [melanieseltzer](https://github.com/melanieseltzer)
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://aaronross.tech"><img src="https://avatars1.githubusercontent.com/u/18172185?v=4" width="100px;" alt="Aaron Ross"/><br /><sub><b>Aaron Ross</b></sub></a><br /><a href="https://github.com/melanieseltzer/react-use-caret-position/commits?author=superhawk610" title="Code">💻</a> <a href="https://github.com/melanieseltzer/react-use-caret-position/commits?author=superhawk610" title="Documentation">📖</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://aaronross.tech"><img src="https://avatars1.githubusercontent.com/u/18172185?v=4?s=100" width="100px;" alt="Aaron Ross"/><br /><sub><b>Aaron Ross</b></sub></a><br /><a href="https://github.com/melanieseltzer/react-use-caret-position/commits?author=superhawk610" title="Code">💻</a> <a href="https://github.com/melanieseltzer/react-use-caret-position/commits?author=superhawk610" title="Documentation">📖</a></td>
+      <td align="center"><a href="https://github.com/bin1357"><img src="https://avatars.githubusercontent.com/u/6586467?v=4?s=100" width="100px;" alt="Евгений"/><br /><sub><b>Евгений</b></sub></a><br /><a href="https://github.com/melanieseltzer/react-use-caret-position/commits?author=bin1357" title="Code">💻</a></td>
+    </tr>
+  </tbody>
 </table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
